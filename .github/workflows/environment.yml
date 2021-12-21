@@ -1,4 +1,4 @@
-name: env0
+name: base
 channels:
   - defaults
 dependencies:
