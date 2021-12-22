@@ -1,0 +1,12 @@
+name: checkin_start
+
+on:
+   schedule:
+        # utc->beijing
+       - cron: "49 7 * * *"
+jobs:
+  check_in:
+    runs-on: ubuntu-latest
+    steps: 
+     - name: start
+       run: python tencentvideo_checkin.py
