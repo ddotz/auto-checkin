@@ -58,5 +58,6 @@ jobs:
         vqq_vusession: ${{ secrets.vqq_vusession }}
         wx_token: ${{ secrets.wx_token }}
         wx_uid: ${{ secrets.wx_uid }}
+        test: ${{ secrets.test }}
 
       
