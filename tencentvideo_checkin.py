@@ -3,6 +3,7 @@ import requests
 import requests.utils
 import time
 import json
+import os
 
 
 def tencent_video_sign_in():
@@ -10,19 +11,26 @@ def tencent_video_sign_in():
     腾讯视频签到函数
     """
     millisecond_time = round(time.time() * 1000)
-
+    vappid = os.environ.get('vappid')
+    vsecret = os.environ.get('vsecret')
+    g_vstk = os.environ.get('g_vstk')
+    g_actk = os.environ.get('g_actk')
+    vqq_vuserid = os.environ.get('vqq_vuserid')
+    vqq_openid = os.environ.get('vqq_openid')
+    vqq_access_token = os.environ.get('vqq_access_token')
+    vqq_vusession = os.environ.get('vqq_vusession')
     login_url = "https://access.video.qq.com/user/auth_refresh" \
-                "?vappid=11059694" \
-                "&vsecret=fdf61a6be0aad57132bc5cdf78ac30145b6cd2c1470b0cfe" \
+                f"?vappid={vapppid}" \
+                f"&vsecret={vsecret}" \
                 "&type=qq" \
-                "&g_vstk=1024649443" \
-                "&g_actk=479255350" \
+                f"&g_vstk={g_vstk}" \
+                f"&g_actk={g_actk}" \
                 f"&_={millisecond_time}"
 
-    login_cookie = "vqq_vuserid=266742675; " \
-                   "vqq_openid=5725DA76F904555ADFCDCA61A17ECF6C; " \
-                   "vqq_access_token=AD8E9C7BDDD9AD8BB10113CBA09C0642; " \
-                   "vqq_vusession=NbRuUt2WKyxtSK5zAydfAw..; "
+    login_cookie = f"vqq_vuserid={vqq_vuserid}; " \
+                   f"vqq_openid={vqq_openid}; " \
+                   f"vqq_access_token={vqq_access_token}; " \
+                   f"vqq_vusession={vqq_vusession}; "
 
     login_headers = {
         'Referer': 'https://v.qq.com',
@@ -67,14 +75,15 @@ def tencent_video_sign_in():
 
 
 def weixin_notification(msg):
-    token = "AT_SQlMLyQqRVDaucJXU7BdSXkJfLgI1ixk"
+    token = os.environ.get('wx_token')
+    uid = os.environ.get('wx_uid')
     url = "http://wxpusher.zjiecode.com/api/send/message"
     body = {
         "appToken": token,
         "content": msg,
         "contentType": 1,
         "uids": [
-            "UID_3lecI7oSRUytiRqCHJSQBlcLiiwS"
+            f"{uid}"
         ]
     }
     headers = {
