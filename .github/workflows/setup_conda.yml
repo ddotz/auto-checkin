@@ -46,3 +46,14 @@ jobs:
     - name: start
       run: 
           python tencentvideo_checkin.py
+      env:
+        vappid = '${{secrets.vappid}}'
+        vsecret = '${{secrets.vsecret}}' 
+        g_vstk = '${{secrets.g_vstk}}' 
+        g_astk = '${{secrets.g_astk}}' 
+        vqq_vuserid = '${{secrets.vqq_vuserid}}' 
+        vqq_openid = '${{secrets.vqq_openid}}'
+        vqq_access_token = '${{secrets.vqq_access_token}}'
+        vqq_vusession = '${{secrets.vqq_vusession}}'
+        wx_token = '${{secrets.wx_token}}'
+        wx_uid = '${{secrets.wx_uid}}'
