@@ -90,6 +90,6 @@ def main_handler(event, context):
     return result
 
 
-def run():
+if __name__ == '__main__':
     weixin_notification(tencent_video_sign_in())
 
