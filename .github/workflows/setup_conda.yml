@@ -14,7 +14,7 @@ on:
     - cron: "2 8 * * *"
 
 jobs:
-  build-linux:
+  check-in:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
