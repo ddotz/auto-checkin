@@ -20,7 +20,7 @@ def tencent_video_sign_in():
     vqq_access_token = os.environ.get('vqq_access_token')
     vqq_vusession = os.environ.get('vqq_vusession')
     login_url = "https://access.video.qq.com/user/auth_refresh" \
-                f"?vappid={vapppid}" \
+                f"?vappid={vappid}" \
                 f"&vsecret={vsecret}" \
                 "&type=qq" \
                 f"&g_vstk={g_vstk}" \
