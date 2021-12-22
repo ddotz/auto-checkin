@@ -1,5 +1,0 @@
-name: base
-channels:
-  - defaults
-dependencies:
- - pip==20.0.2
