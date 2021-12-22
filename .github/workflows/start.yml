@@ -8,5 +8,8 @@ jobs:
   check_in:
     runs-on: ubuntu-latest
     steps: 
-     - name: start
-       run: python tencentvideo_checkin.py
+    - name: Checkout
+      uses: actions/checkout@master
+        
+    - name: start
+      run: python tencentvideo_checkin.py
