@@ -34,4 +34,4 @@ jobs:
 #        pytest
     - name: start
       run: 
-          tencentvideo_checkin_auto.py
+          python tencentvideo_checkin.py
