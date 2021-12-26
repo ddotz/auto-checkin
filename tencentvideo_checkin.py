@@ -19,9 +19,6 @@ def tencent_video_sign_in():
     vqq_openid = os.environ.get('vqq_openid')
     vqq_access_token = os.environ.get('vqq_access_token')
     vqq_vusession = os.environ.get('vqq_vusession')
-    name = os.environ.get('name')
-    print('name:',name)
-    print(vappid,'\n', vsecret,'\n', g_vstk,'\n', g_actk,'\n', vqq_vuserid,'\n', vqq_access_token,'\n', vqq_vusession)
     login_url = "https://access.video.qq.com/user/auth_refresh" \
                 f"?vappid={vappid}" \
                 f"&vsecret={vsecret}" \
@@ -78,12 +75,12 @@ def tencent_video_sign_in():
 
 
 def weixin_notification(msg):
-    token = 'AT_SQlMLyQqRVDaucJXU7BdSXkJfLgI1ixk'
-    uid = 'UID_3lecI7oSRUytiRqCHJSQBlcLiiwS'
+    token = os.environ['wx_token']
+    uid = os.environ['wx_uid']
     url = "http://wxpusher.zjiecode.com/api/send/message"
     body = {
         "appToken": token,
-        "content": 'appid:'+os.environ.get('vappid')+'name:'+os.environ.get('name'),
+        "content": msg,
         "contentType": 1,
         "uids": [
             f"{uid}"
