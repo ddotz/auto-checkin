@@ -59,5 +59,6 @@ jobs:
         wx_token: ${{ secrets.wx_token }}
         wx_uid: ${{ secrets.wx_uid }}
         test_hello: hello,world
+        name: ${{ secrets.name }}
 
       
