@@ -48,7 +48,7 @@ jobs:
       run: 
           python tencentvideo_checkin.py
       env:
-        vappid: ${{ secrets.vappid }}
+        vappid: ${{ secrets.VAPPID }}
         vsecret: ${{ secrets.vsecret }}
         g_vstk: ${{ secrets.g_vstk }}
         g_actk: ${{ secrets.g_cstk }}
