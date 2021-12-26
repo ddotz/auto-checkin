@@ -1,49 +1,27 @@
-name: set-up using Conda
+name: set-up checkin
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
-    # `分 时 天 月 周` 时按照标准时间 GMT16:05   --+8-->   24:05
+    # GMT16:05   --+8-->   24:05
     - cron: "5 16 * * *"
 
 jobs:
   check-in:
     runs-on: ubuntu-latest
     environment: qqvideo_checkin
-    strategy:
-      max-parallel: 5
 
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@v2
     - name: Set up Python 3.6.7
       uses: actions/setup-python@v2
       with:
         python-version: 3.6.7
-    - name: Add conda to system path
+    - name: install requirements
       run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        echo $CONDA/bin >> $GITHUB_PATH
-# #     - name: Install dependencies
-# #       run: |
-# #         conda env update --file environment.yml --name base
-#     - name: Lint with flake8
-#       run: |
-#         conda install flake8
-#         # stop the build if there are Python syntax errors or undefined names
-#         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-#         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-#         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-#     - name: Test with pytest
-#       run: |
-#         conda install pytest
-# #        pytest
+          pip install requests
     - name: start
       run: 
           python tencentvideo_checkin.py
@@ -58,7 +36,5 @@ jobs:
         vqq_vusession: ${{ secrets.vqq_vusession }}
         wx_token: ${{ secrets.wx_token }}
         wx_uid: ${{ secrets.wx_uid }}
-        test_hello: hello,world
-        name: ${{ secrets.name }}
 
       
