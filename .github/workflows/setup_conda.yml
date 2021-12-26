@@ -16,7 +16,7 @@ on:
 jobs:
   check-in:
     runs-on: ubuntu-latest
-    environment: production
+    environment: qqvideo_checkin
     strategy:
       max-parallel: 5
 
