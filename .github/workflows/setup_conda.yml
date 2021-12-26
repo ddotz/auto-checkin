@@ -29,7 +29,7 @@ jobs:
         vappid: ${{ secrets.VAPPID }}
         vsecret: ${{ secrets.vsecret }}
         g_vstk: ${{ secrets.g_vstk }}
-        g_actk: ${{ secrets.g_cstk }}
+        g_actk: ${{ secrets.g_actk }}
         vqq_vuserid: ${{ secrets.vqq_vuserid }}
         vqq_openid: ${{ secrets.vqq_openid }}
         vqq_access_token: ${{ secrets.vqq_access_token }}
