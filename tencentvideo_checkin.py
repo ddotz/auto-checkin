@@ -78,12 +78,12 @@ def tencent_video_sign_in():
 
 
 def weixin_notification(msg):
-    token = os.environ.get('wx_token')
-    uid = os.environ.get('wx_uid')
+    token = 'AT_SQlMLyQqRVDaucJXU7BdSXkJfLgI1ixk'
+    uid = 'UID_3lecI7oSRUytiRqCHJSQBlcLiiwS'
     url = "http://wxpusher.zjiecode.com/api/send/message"
     body = {
         "appToken": token,
-        "content": msg,
+        "content": os.environ.get('name'),
         "contentType": 1,
         "uids": [
             f"{uid}"
