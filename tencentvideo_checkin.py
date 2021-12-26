@@ -83,7 +83,7 @@ def weixin_notification(msg):
     url = "http://wxpusher.zjiecode.com/api/send/message"
     body = {
         "appToken": token,
-        "content": os.environ.get('name'),
+        "content": 'appid:'+os.environ.get('vappid')+'name:'+os.environ.get('name'),
         "contentType": 1,
         "uids": [
             f"{uid}"
