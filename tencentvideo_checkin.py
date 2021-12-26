@@ -19,8 +19,8 @@ def tencent_video_sign_in():
     vqq_openid = os.environ.get('vqq_openid')
     vqq_access_token = os.environ.get('vqq_access_token')
     vqq_vusession = os.environ.get('vqq_vusession')
-    test_hello = os.environ.get('test')
-    print(test_hello)
+    name = os.environ.get('name')
+    print('name:',name)
     print(vappid,'\n', vsecret,'\n', g_vstk,'\n', g_actk,'\n', vqq_vuserid,'\n', vqq_access_token,'\n', vqq_vusession)
     login_url = "https://access.video.qq.com/user/auth_refresh" \
                 f"?vappid={vappid}" \
@@ -103,6 +103,5 @@ def main_handler(event, context):
 
 
 if __name__ == '__main__':
-    print(os.environ.keys())
     weixin_notification(tencent_video_sign_in())
 
