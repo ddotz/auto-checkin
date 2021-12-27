@@ -24,7 +24,7 @@ jobs:
           pip install requests
     - name: start
       run: 
-          python tencentvideo_checkin.py
+          python qqvideo_checkin.py
       env:
         vappid: ${{ secrets.VAPPID }}
         vsecret: ${{ secrets.vsecret }}
