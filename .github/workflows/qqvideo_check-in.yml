@@ -1,4 +1,4 @@
-name: qqvideo checkin
+name: qqvideo check-in
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -24,7 +24,7 @@ jobs:
           pip install requests
     - name: start
       run: 
-          python qqvideo_checkin.py
+          python qqvideo_check-in.py
       env:
         vappid: ${{ secrets.VAPPID }}
         vsecret: ${{ secrets.vsecret }}
