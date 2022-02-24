@@ -70,7 +70,7 @@ def tencent_video_sign_in():
             result_msg = "腾讯视频-签到结果:{}".format("未知错误！！！")
     else:
         result_msg = "腾讯视频-签到结果:{}".format("未获取到Cookie信息！")
-    #print(result_msg)
+    print(result_msg)
     return result_msg
 
 
