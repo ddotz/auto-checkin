@@ -1,0 +1,13 @@
+name: test
+on:
+  workflow_dispatch
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: setup python
+      uses: actions/setup-python@v2
+    - name: start
+      run: python test.py
