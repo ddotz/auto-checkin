@@ -4,5 +4,5 @@ if __name__ == '__main__':
   time1 = time.time()
   time2 = time.localtime(time1)
   time3 = time.asctime(time2)
-  print('{}{}{}'.format(time1, time2, time3))
+  print('{}\n{}\n{}'.format(time1, time2, time3))
   
