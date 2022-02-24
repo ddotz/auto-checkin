@@ -39,12 +39,12 @@ def tencent_video_sign_in():
 
     login_rsp = requests.get(url=login_url, headers=login_headers)
     login_rsp_cookie = requests.utils.dict_from_cookiejar(login_rsp.cookies)
-    print(login_rsp_cookie)
+    #print(login_rsp_cookie)
     if login_rsp.status_code == 200 and login_rsp_cookie:
         auth_cookie = "main_login=qq; " \
                       f"vqq_vusession={login_rsp_cookie['vqq_vusession']}; "
 
-        print(auth_cookie)
+        #print(auth_cookie)
         sign_in_url = "https://vip.video.qq.com/fcgi-bin/comm_cgi?name=hierarchical_task_system&cmd=2" \
                       f"&_={str(millisecond_time)}"
 
@@ -70,7 +70,7 @@ def tencent_video_sign_in():
             result_msg = "腾讯视频-签到结果:{}".format("未知错误！！！")
     else:
         result_msg = "腾讯视频-签到结果:{}".format("未获取到Cookie信息！")
-    print(result_msg)
+    #print(result_msg)
     return result_msg
 
 
@@ -90,7 +90,7 @@ def weixin_notification(msg):
         'Content-Type': 'application/json'
     }
     response = requests.post(url=url, headers=headers, json=body)
-    print(response.text)
+    #print(response.text)
 
 
 def main_handler(event, context):
