@@ -100,7 +100,5 @@ def main_handler(event, context):
 
 
 if __name__ == '__main__':
-    localtime = time.localtime()
-    print(localtime)
     weixin_notification(tencent_video_sign_in())
 
