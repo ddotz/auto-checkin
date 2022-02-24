@@ -1,2 +1,2 @@
-# automatic check-in
-It's a script to realize automatic check-in of daily applications
+# automatic checkin
++ A script to realize automatic check-in of daily applications
