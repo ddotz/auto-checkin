@@ -24,7 +24,7 @@ jobs:
           pip install requests
     - name: start
       run: 
-          python qqvideo_check-in.py
+          python qqvideo.py
       env:
         vappid: ${{ secrets.VAPPID }}
         vsecret: ${{ secrets.vsecret }}
