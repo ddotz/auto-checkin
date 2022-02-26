@@ -4,8 +4,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
-    # 15:35 + 7:30 = 24:05
-    - cron: "35 15 * * *"
+    # 16:05 + 8:00 = 24:05 /actually 24:35
+    # 15:35 + 8:30 = 24:05 /actually 23:45
+    # 15:55 + 8:10 = 24:05
+    - cron: "55 15 * * *"
 
 jobs:
   check-in:
